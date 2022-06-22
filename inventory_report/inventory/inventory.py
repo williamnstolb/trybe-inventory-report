@@ -1,4 +1,5 @@
 import csv
+import json
 from inventory_report.reports.complete_report import CompleteReport
 from inventory_report.reports.simple_report import SimpleReport
 
@@ -16,11 +17,18 @@ class Inventory:
                 list_datas.append(data)
         return list_datas
 
+    def import_data_json(path):
+        with open(path) as file:
+            return json.load(file)
+
     def file(f):
         split_path = f.split('.')[1]
 
         if split_path == 'csv':
             return Inventory.import_data_csv(f)
+
+        elif split_path == 'json':
+            return Inventory.import_data_json(f)
 
     def import_data(path, type):
         product_list = Inventory.file(path)
