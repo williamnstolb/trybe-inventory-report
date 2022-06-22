@@ -17,5 +17,5 @@ class SimpleReport:
         return (
                 f"Data de fabricação mais antiga: {min(list_manufactures)}\n"
                 f"Data de validade mais próxima: {min(list_validity)}\n"
-                f"Empresa com mais produtos: {company_more_products}\n"
+                f"Empresa com mais produtos: {company_more_products}"
         )
